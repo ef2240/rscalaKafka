@@ -46,7 +46,8 @@ KafkaProducer = R6::R6Class(
 
       private$kafka_producer =
         s$do('org.dselivanov.rkafka.RscalaKafkaProducer')$new(broker_list, client_id,
-                                                              config_keys, config_values)
+                                                              config_keys, config_values,
+                                                             TRUE)
     },
     send = function(messages, topic) {
       if(!is.character(messages))
